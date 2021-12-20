@@ -1,4 +1,4 @@
-package com.company;
+package pl.kkowalczyk.bazaDanych;
 
 public class Command_Show extends Command implements ICommand {
 

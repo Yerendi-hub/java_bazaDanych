@@ -1,4 +1,4 @@
-package com.company;
+package pl.kkowalczyk.bazaDanych;
 
 public enum DbFieldType {
     None,

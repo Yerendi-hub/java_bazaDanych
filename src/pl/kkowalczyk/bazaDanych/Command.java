@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.Locale;
+package pl.kkowalczyk.bazaDanych;
 
 public abstract class Command implements ICommand {
     protected String name;

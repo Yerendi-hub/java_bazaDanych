@@ -1,4 +1,4 @@
-package com.company;
+package pl.kkowalczyk.bazaDanych;
 
 public class Command_Quit extends Command implements ICommand {
 

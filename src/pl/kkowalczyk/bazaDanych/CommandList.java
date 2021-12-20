@@ -1,4 +1,4 @@
-package com.company;
+package pl.kkowalczyk.bazaDanych;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,5 @@
-package com.company;
+package pl.kkowalczyk.bazaDanych;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
