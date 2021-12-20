@@ -1,7 +1,5 @@
 package pl.kkowalczyk.bazaDanych;
 
-import com.company.dbExceptions.DatabaseAlreadyExistException;
-
 import java.util.ArrayList;
 import java.util.List;
 
