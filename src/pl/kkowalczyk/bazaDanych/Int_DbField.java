@@ -4,6 +4,10 @@ public class Int_DbField implements IDbField {
 
     int val;
 
+    public Int_DbField(String fieldValue) {
+        val = Integer.valueOf(fieldValue);
+    }
+
     @Override
     public DbFieldType getFieldType() {
         return DbFieldType.Int;
@@ -12,11 +16,6 @@ public class Int_DbField implements IDbField {
     @Override
     public String getValue() {
         return String.valueOf(val);
-    }
-
-    @Override
-    public Boolean create(Object a) {
-        return null;
     }
 }
 

@@ -6,7 +6,9 @@ public class Command_Create extends Command implements ICommand {
 
     public Command_Create()
     {
-        super("create", "allows to create structures");
+        super("create", "allows to create structures",
+                "This command allows user to create database related structures. \n" +
+                        "Supported:\n CREATE DATABASE db_name \n CREATE TABLE table_name t_val_1 t_type_1 t_val_2 t_type_2 ...");
     }
 
     @Override
@@ -57,6 +59,7 @@ public class Command_Create extends Command implements ICommand {
             if(command.length % 2 != 0) {
                 String name = command[2];
                 ArrayList<DbFieldDeclaration> fields = new ArrayList<>();
+                fields.add(new DbFieldDeclaration("id", "int"));
 
                 for (int i = 3; i < command.length; i += 2)
                 {

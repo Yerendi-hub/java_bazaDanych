@@ -2,6 +2,7 @@ package pl.kkowalczyk.bazaDanych;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Engine {
@@ -22,15 +23,18 @@ public class Engine {
     {
         return databases;
     }
+    public CommandList getCommandList() {return commandList;}
 
     public void executeEngineLoop() {
+        initSimpleDb();
+        System.out.println("Welcome in java db simulation. Type 'HELP' to list avaliable commands. \n There is simple database 'db' pre-initialized" );
         Scanner in = new Scanner(System.in);
 
         while (true)
         {
-            System.out.print("\nsdb>");
+            System.out.print("\n>");
             String c = in.nextLine();
-            String result = commandList.execute(c);
+            String result = commandList.execute(c.toLowerCase());
             System.out.print(result);
         }
     }
@@ -74,5 +78,12 @@ public class Engine {
         else{
             return String.format("Database with name '%s' does not exist", dbName);
         }
+    }
+
+    private void initSimpleDb()
+    {
+        commandList.execute("create database db");
+        commandList.execute("use db");
+        commandList.execute("create table t k1 int k2 string");
     }
 }

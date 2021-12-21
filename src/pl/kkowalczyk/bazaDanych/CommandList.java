@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommandList {
-    List<ICommand> commands;
+    private List<ICommand> commands;
+
+    public List<ICommand> getCommands() {return commands;}
 
     public CommandList()
     {
@@ -13,6 +15,8 @@ public class CommandList {
         commands.add(new Command_Quit());
         commands.add(new Command_Show());
         commands.add(new Command_Use());
+        commands.add(new Command_Insert());
+        commands.add(new Command_Help());
     }
 
     public String execute(String c)
@@ -21,10 +25,7 @@ public class CommandList {
 
         if(split.length > 0)
         {
-            ICommand command = commands.stream()
-                    .filter(d -> split[0].equals(d.getName()))
-                    .findAny()
-                    .orElse(null);
+            ICommand command = getCommand(split[0]);
 
             if(command != null)
             {
@@ -37,5 +38,14 @@ public class CommandList {
         else{
             return "";
         }
+    }
+
+    public ICommand getCommand(String commandName)
+    {
+        ICommand command = commands.stream()
+                .filter(d -> commandName.equals(d.getName()))
+                .findAny()
+                .orElse(null);
+        return command;
     }
 }

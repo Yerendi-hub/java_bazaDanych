@@ -3,7 +3,7 @@ package pl.kkowalczyk.bazaDanych;
 public class Command_Show extends Command implements ICommand {
 
     public Command_Show() {
-        super("show", "allows to structures");
+        super("show", "allows to structures", "");
     }
 
     @Override

@@ -18,6 +18,23 @@ public class DbFieldDeclaration {
         return type;
     }
 
+    public boolean doesValueMatchType(String val)
+    {
+        if(val == null) return false;
+
+        switch (type) {
+            case Int -> {
+                return Utils.isNumeric(val);
+            }
+            case String -> {
+                return true;
+            }
+            default ->{
+                return false;
+            }
+        }
+    }
+
     private DbFieldType StringToFieldTypeParser(String val)
     {
         switch (val)
@@ -29,3 +46,4 @@ public class DbFieldDeclaration {
         return DbFieldType.None;
     }
 }
+

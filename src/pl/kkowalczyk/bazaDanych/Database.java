@@ -44,5 +44,15 @@ public class Database {
             return String.format("Unsupported error when creating table: %s", e);
         }
     }
+
+    public Table getTable(String tableName)
+    {
+        Table table = tables.stream()
+                .filter(d -> tableName.equals(d.getName()))
+                .findAny()
+                .orElse(null);
+
+        return table;
+    }
 }
 

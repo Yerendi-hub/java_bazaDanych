@@ -3,7 +3,7 @@ package pl.kkowalczyk.bazaDanych;
 public class Command_Use extends Command implements ICommand {
 
     public Command_Use() {
-        super("use", "Allows to select default database. Usage: 'use my_db_name'");
+        super("use", "Allows to select default database.", "Usage: 'USE my_db_name'");
     }
 
     @Override
@@ -23,3 +23,4 @@ public class Command_Use extends Command implements ICommand {
         }
     }
 }
+

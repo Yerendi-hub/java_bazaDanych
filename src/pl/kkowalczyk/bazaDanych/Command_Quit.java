@@ -3,7 +3,7 @@ package pl.kkowalczyk.bazaDanych;
 public class Command_Quit extends Command implements ICommand {
 
     public Command_Quit() {
-        super("quit", "exits program");
+        super("quit", "exits program", "");
     }
 
     @Override

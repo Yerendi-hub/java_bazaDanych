@@ -3,11 +3,13 @@ package pl.kkowalczyk.bazaDanych;
 public abstract class Command implements ICommand {
     protected String name;
     protected String description;
+    protected String detailedDescription;
 
-    public Command(String _name, String _description)
+    public Command(String _name, String _description, String _detailedDescription)
     {
         name = _name.toLowerCase();
-        description = _description.toLowerCase();
+        description = _description;
+        detailedDescription = _detailedDescription;
     }
 
     public String getName()
@@ -19,6 +21,7 @@ public abstract class Command implements ICommand {
     {
         return description;
     }
+    public String getDetailedDescription()    {        return detailedDescription;    }
 }
 
 
