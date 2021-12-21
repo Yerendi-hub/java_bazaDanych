@@ -1,6 +1,7 @@
 package pl.kkowalczyk.bazaDanych;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Database {
@@ -29,8 +30,20 @@ public class Database {
     public String createTable(Table table) {
         try
         {
+            if(!Utils.isNameLegal(table.getName())) return String.format("Name %s is forbidden.", table.getName());
+
             if(!tables.stream().filter(o -> o.getName().equals(table.getName())).findFirst().isPresent())
             {
+                HashSet<String> names = new HashSet<>();
+
+                for (var field : table.getStructure())
+                {
+                    if(!names.add(field.getName()))
+                    {
+                        return String.format("Table %s has duplicated column names: %s.", table.getName(), field.getName());
+                    }
+                }
+
                 tables.add(table);
                 return String.format("Table %s created successfully.", table.getName());
             }

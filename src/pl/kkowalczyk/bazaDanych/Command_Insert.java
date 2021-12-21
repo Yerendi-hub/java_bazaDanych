@@ -6,7 +6,7 @@ import java.util.List;
 public class Command_Insert extends Command implements ICommand {
 
     public Command_Insert() {
-        super("insert", "allows to insert data to database.", "");
+        super("insert", "allows to insert data to database.", "Usage: INSERT INTO table_name val1 val2 val3...");
     }
 
     @Override

@@ -13,6 +13,8 @@ public class Table {
     {
         return name;
     }
+    public List<Row> getRows() { return rows; }
+    public List<DbFieldDeclaration> getStructure() { return structure; }
 
     public Table(String _name, List<DbFieldDeclaration> fields)
     {
@@ -52,6 +54,40 @@ public class Table {
         pk++;
         rows.add(row);
         return "Row added";
+    }
+
+    public String deleteRow(String id)
+    {
+        Row row = rows.stream()
+                .filter(d -> id.equals(d.getId()))
+                .findAny()
+                .orElse(null);
+
+        if(row == null) return String.format("There is no row with id %s", id);
+
+        rows.remove(row);
+        return String.format("Row with id %s deleted.", id);
+    }
+
+    public String updateRow(String id, ArrayList<String> values)
+    {
+        Row row = rows.stream()
+                .filter(d -> id.equals(d.getId()))
+                .findAny()
+                .orElse(null);
+
+        if(row == null) return String.format("There is no row with id %s", id);
+
+        if(values.size() != row.getFields().size()-1) return String.format("Values count does not match with row values count");
+
+        for (int i = 0; i < values.size(); i++)
+        {
+            String updateStatus = row.getFields().get(i+1).updateValue(values.get(i));
+
+            if(!updateStatus.equals("")) return updateStatus;
+        }
+
+        return String.format("Row with id %s updated.", id);
     }
 }
 

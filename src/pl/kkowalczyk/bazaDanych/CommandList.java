@@ -17,6 +17,9 @@ public class CommandList {
         commands.add(new Command_Use());
         commands.add(new Command_Insert());
         commands.add(new Command_Help());
+        commands.add(new Command_Select());
+        commands.add(new Command_Delete());
+        commands.add(new Command_Update());
     }
 
     public String execute(String c)

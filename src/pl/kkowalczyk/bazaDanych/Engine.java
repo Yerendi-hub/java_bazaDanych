@@ -43,6 +43,8 @@ public class Engine {
     {
         try
         {
+            if(!Utils.isNameLegal(databaseName)) return String.format("Name %s is forbidden.", databaseName);
+
             if(!databases.stream().filter(o -> o.getName().equals(databaseName)).findFirst().isPresent())
             {
                 databases.add(new Database(databaseName));
@@ -85,5 +87,8 @@ public class Engine {
         commandList.execute("create database db");
         commandList.execute("use db");
         commandList.execute("create table t k1 int k2 string");
+        commandList.execute("insert into t 123 asd");
+        commandList.execute("insert into t 234 sdf");
+        commandList.execute("insert into t 345 dfgaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     }
 }

@@ -17,4 +17,10 @@ public class String_DbField implements IDbField {
     public String getValue() {
         return val;
     }
+
+    @Override
+    public String updateValue(String newValue) {
+        val = newValue;
+        return "";
+    }
 }

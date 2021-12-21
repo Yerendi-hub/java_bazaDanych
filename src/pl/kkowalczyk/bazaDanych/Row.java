@@ -11,6 +11,8 @@ public class Row {
         fields = new ArrayList<>();
     }
 
+    public List<IDbField>  getFields() { return fields;}
+
     public String addField(DbFieldDeclaration declaration, String fieldValue)
     {
         IDbField field = null;
@@ -31,6 +33,11 @@ public class Row {
         }
 
         return "Tried to create field with unsupported type";
+    }
+
+    public String getId()
+    {
+        return getFields().get(0).getValue();
     }
 }
 
