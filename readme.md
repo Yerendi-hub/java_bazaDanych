@@ -2,8 +2,10 @@
 Projekt bazy danych realizowany na zaliczenie przedmiotu "Programowanie w języku Java" na Politechnice Krakowskiej. \
 \
 Celem projektu jest symulacja prostej relacyjnej bazy danych. \
-Czas życia bazy danych jest równy czasowi działania programu.
-##Dostępne komendy:
+Czas życia bazy danych jest równy czasowi działania programu. \
+\
+Dostępne komendy:
+\
 \
 **CREATE DATABASE db_name** - tworzy baze danych o podanej nazwie\
 \
