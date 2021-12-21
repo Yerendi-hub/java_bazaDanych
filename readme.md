@@ -2,8 +2,8 @@
 Projekt bazy danych realizowany na zaliczenie przedmiotu "Programowanie w języku Java" na Politechnice Krakowskiej. \
 \
 Celem projektu jest symulacja prostej relacyjnej bazy danych. \
-Czas życia bazy danych jest równy czasowi działania programu.\
-Dostępne komendy: \
+Czas życia bazy danych jest równy czasowi działania programu.
+##Dostępne komendy:
 \
 **CREATE DATABASE db_name** - tworzy baze danych o podanej nazwie\
 \
@@ -15,6 +15,9 @@ _string_
 \
 \
 **USE db_name** - wybiera bazę danych "db_name" jako bazę domyślną \
+\
+**INSERT INTO table_name val1 val2 ...** - pozwala dodać do tabelki podane wartosci 
+(należy pdoać wszystkie wymagane przez tabelkę oprócz 'id'). Stringi mogą zawierać tylko jeden wyraz bez spacji. \
 \
 **SHOW DATABASES** - pokazuje utworzone bazy\
 \
