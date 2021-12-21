@@ -20,7 +20,7 @@ public class Command_Delete extends Command implements ICommand {
                 return table.deleteRow(split[3]);
 
             } else {
-                return "Usage: 'DELETE FROM table_name WHERE field='value'";
+                return "Usage: 'DELETE FROM table_name id'";
             }
         } catch (Exception e) {
             return String.format("Unsupported error when executing 'show' command: %s", e);

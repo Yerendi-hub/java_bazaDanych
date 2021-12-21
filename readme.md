@@ -20,4 +20,14 @@ _string_
 \
 **SHOW TABLES** - pokazuje tabelki w bazie\
 \
+**DELETE FROM table_name id** - pozwala usunąć wpis o podanym id\
+\
+**UPDATE table_name id val1 val2 ...** - pozwala zmodyfikować wpis o podanym ID\
+\
+**SELECT FROM table_name** - wyświetla zawartość podanej tabelki\
+\
+**HELP** - wyświetla dostępne komendy\
+\
+**HELP command_name** - wyświetla szczegółowy opis komendy\
+\
 **QUIT** - wychodzi z programu
